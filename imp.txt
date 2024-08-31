@@ -1,0 +1,1 @@
+you cannot add text in a view element itself. it should always be wrapped by a text element
