@@ -4,7 +4,6 @@ import OAuth from "@/components/OAuth";
 import { icons, images } from "@/constants";
 import { fetchAPI } from "@/lib/fetch";
 import { useSignUp } from "@clerk/clerk-expo";
-import { clerk } from "@clerk/clerk-expo/dist/provider/singleton";
 import { Link, router } from "expo-router";
 import { useState } from "react";
 import { Alert, Image, ScrollView, Text, View } from "react-native";
@@ -66,7 +65,7 @@ const signup = () => {
             clerkId: completeSignUp.createdUserId,
           }),
         });
-        
+
         await setActive({ session: completeSignUp.createdSessionId });
         setVerification({ ...verification, state: "success" });
       } else {
